@@ -7,14 +7,7 @@ class Lottery :
         Player takes a ticket with 6 non-duplicates random number
         from 1 to 45.
         """
-        number_taken = []
-        ticket = []
-        n_number = 0
-        while len(ticket)<6:
-            number = random.randint(1, 45)
-            if number not in ticket:
-                ticket.append(number)
-                number_taken.append(number)
+        ticket = random.choices(range(1, 45), k=6)
         ticket.sort()
         return ticket
     
@@ -23,14 +16,7 @@ class Lottery :
         Lotto company draws a ticket with 6 non-duplicates random number
         from 1 to 45.
         """
-        number_taken = []
-        ticket = []
-        n_number = 0
-        while len(ticket)<6:
-            number = random.randint(1, 45)
-            if number not in ticket:
-                ticket.append(number)
-                number_taken.append(number)
+        ticket = random.choices(range(1, 45), k=6)
         ticket.sort()
         return ticket
 
