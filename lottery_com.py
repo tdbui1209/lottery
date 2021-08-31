@@ -2,6 +2,7 @@ import random
 
 class Lottery :
     """Number-1 legit lotto company."""
+
     def draw_ticket(self):
         """
         Player takes a ticket with 6 non-duplicates random number
@@ -10,7 +11,7 @@ class Lottery :
         ticket = random.choices(range(1, 45), k=6)
         ticket.sort()
         return ticket
-    
+
     def draw_winning_ticket(self):
         """
         Lotto company draws a ticket with 6 non-duplicates random number
@@ -20,13 +21,13 @@ class Lottery :
         ticket.sort()
         return ticket
 
-    def compare(self, betthu_ticket, draw_ticket):
+    def compare(self, player_ticket, winning_ticket):
         """
         Compare player's ticket with winning ticket.
         """
         match_numbers = []
-        for number in betthu_ticket:
-            if number in draw_ticket:
+        for number in player_ticket:
+            if number in winning_ticket:
                 match_numbers.append(number)
         match_numbers.sort()
         print("Player's ticket:")
@@ -37,5 +38,3 @@ class Lottery :
         print()
         print('Match numbers: {0}\n{1}'.format(len(match_numbers),
                                                match_numbers))
-        
-
